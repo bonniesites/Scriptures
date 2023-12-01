@@ -3,8 +3,6 @@ import streamlit as st
 import pandas as pd
 from streamlit_extras.stoggle import stoggle
 
-
-
 scriptures = pd.read_parquet("./data/scriptures.parquet")
 
 if 'show_scripture' not in st.session_state:
@@ -52,9 +50,3 @@ if st.button("Generate", on_click=show_scripture):
     "Show Reference",
     f"{scripture['verse_title'].values[0]}"
     )
-
-# if st.session_state.scripture is not None:
-#     st.button("Show reference", on_click=show_reference)
-
-#     if st.session_state.show_reference:
-#         st.write(scripture['verse_title'].values[0])
