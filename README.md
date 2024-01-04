@@ -12,6 +12,6 @@ pip install numpy pandas streamlit streamlit_extras
 ## Usage
 To run the app, run the following command:
 ```bash
-streamlit run app.py
+streamlit run Home.py
 ```
 

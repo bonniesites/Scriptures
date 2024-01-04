@@ -32,7 +32,7 @@ def generate_scripture(volume=None):
 st.sidebar.title("Options")
 st.sidebar.subheader("Select a volume of scripture")
 options = np.append("Any", scriptures.volume_title.unique())
-volume = st.sidebar.selectbox("Volume", options)
+volume = st.sidebar.selectbox("Volume", options, index=3)
     
 
 
