@@ -1,9 +1,16 @@
 import streamlit as st
 import polars as pl
+import nltk
 from nltk.probability import FreqDist
 from nltk.tokenize import word_tokenize
 from streamlit_option_menu import option_menu
 import plotly.express as px
+
+@st.cache_resource
+def download_nltk():
+    nltk.download('punkt')
+
+download_nltk()
 
 scriptures = pl.read_parquet("./data/scriptures.parquet")
 
