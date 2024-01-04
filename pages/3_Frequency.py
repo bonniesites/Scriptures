@@ -1,9 +1,5 @@
 import streamlit as st
-import pandas as pd
 import polars as pl
-import numpy as np
-import nltk
-from nltk.corpus import stopwords
 from nltk.probability import FreqDist
 from nltk.tokenize import word_tokenize
 from streamlit_option_menu import option_menu
@@ -59,7 +55,7 @@ if option_select == "Search":
             # Ignore case
             search = ["(?i)" + s for s in search]
 
-            
+
         search = "|".join(search)
         print(search)
         results = freq.filter(pl.col("Word").str.contains(search))
