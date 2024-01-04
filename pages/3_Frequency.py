@@ -40,7 +40,7 @@ option_select = option_menu(None, options,
 if option_select == "Search":
     col1, col2 = st.columns([5, 1])
     with col1:
-        search = st.text_input("**Search**", placeholder="Nephi, Sword, Arm", help="Separate values by commas", max_chars=None, type='default')
+        search = st.text_input("**Search**", placeholder="Nephi, repentance, curelom", help="Separate values by commas", max_chars=None, type='default')
     with col2:
         st.markdown("##")
         exact = st.toggle("Exact", value=False, key=None)

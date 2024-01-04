@@ -2,3 +2,4 @@ streamlit_extras
 polars
 nltk
 streamlit_option_menu
+plotly
