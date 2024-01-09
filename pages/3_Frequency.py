@@ -44,7 +44,6 @@ group_by_mapping = {
 
 group_by = st.sidebar.selectbox("Group By", 
                                 list(group_by_mapping.keys()), 
-                                index=None, 
                                 format_func=lambda x: group_by_mapping[x]
                                 )
 
