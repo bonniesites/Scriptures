@@ -3,3 +3,4 @@ polars
 nltk
 streamlit_option_menu
 plotly
+spacy
