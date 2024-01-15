@@ -13,10 +13,10 @@ st.title("Similar Verses")
 def read_docs():
     """ Read in the docs """
     model_name = 'en_core_web_md'
-    if not spacy.util.is_package(model_name):
-        print(f"Downloading model '{model_name}'")
-        spacy.cli.download(model_name)
-        print(f"Finished downloading model '{model_name}'")
+    # if not spacy.util.is_package(model_name):
+    #     print(f"Downloading model '{model_name}'")
+    #     spacy.cli.download(model_name)
+    #     print(f"Finished downloading model '{model_name}'")
 
     bytes_data = open("scriptures.spacy", "rb").read()
     nlp = spacy.load(model_name)

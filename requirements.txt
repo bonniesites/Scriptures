@@ -4,3 +4,4 @@ nltk
 streamlit_option_menu
 plotly
 spacy
+en-core-web-md
