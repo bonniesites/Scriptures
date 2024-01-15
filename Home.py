@@ -11,3 +11,7 @@ st.title("Scripture App")
 "Interested in word frequencies? Search for your word on the [Frequency](/Frequency) page. "
 
 # "For a more scholarly crowd, the authorship attribution page is for you!"
+
+st.markdown("---")
+
+st.markdown("Also check out my scripture blog, [Write of Christ](https://writeofchrist.vercel.app).")
