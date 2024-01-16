@@ -31,7 +31,7 @@ def most_similar(search_verse, verses, n):
     return sorted(enumerate(similarities), key=lambda item: -item[1])[:n]
 
 # Read in scriptures
-scriptures = pl.read_parquet("./data/scriptures.parquet").with_row_count()
+scriptures = pl.read_parquet("./data/scriptures.parquet").with_row_index()
 verses = scriptures["verse_title"].unique(maintain_order=True).to_list()
 
 search_verse = st.selectbox("Search Verse", placeholder="ex. John 3:16", options=verses, index=None)
@@ -48,7 +48,7 @@ if search_verse is not None:
     
     scriptures = scriptures.join(
         related, 
-        left_on="row_nr", 
+        left_on="index", 
         right_on="verse"
         )\
         .sort(
