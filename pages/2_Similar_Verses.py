@@ -4,9 +4,8 @@ import spacy
 from spacy.tokens import DocBin
 
 # Disclaimer
-st.sidebar.title("Disclaimer")
-st.sidebar.write("This is a work in progress. The scriptures it generates may or may not be that closely related.")
 n = st.sidebar.number_input("Number of verses", min_value=1, max_value=100, value=5, step=1, format="%d")
+
 st.title("Similar Verses")
 
 @st.cache_resource
