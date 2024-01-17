@@ -18,7 +18,7 @@ def read_docs():
     #     spacy.cli.download(model_name)
     #     print(f"Finished downloading model '{model_name}'")
 
-    bytes_data = open("scriptures.spacy", "rb").read()
+    bytes_data = open("scriptures2.spacy", "rb").read()
     nlp = spacy.load(model_name)
     doc_bin = DocBin().from_bytes(bytes_data)
     docs = list(doc_bin.get_docs(nlp.vocab))
@@ -39,7 +39,7 @@ search_verse = st.selectbox("Search Verse", placeholder="ex. John 3:16", options
 if search_verse is not None:
     search_verse_index = verses.index(search_verse)
     search_doc = docs[search_verse_index]
-    search_doc.text 
+    # search_doc.text 
     related = most_similar(search_doc, docs, n)
     related = pl.DataFrame(related, 
                            schema={"verse": pl.UInt32, "similarity": pl.Float64},
@@ -57,12 +57,11 @@ if search_verse is not None:
             )\
         .select('verse_title', "scripture_text")\
         .to_dict(as_series=False)
-    
+    st.write(">" + scriptures["scripture_text"][0])
     # scriptures
     st.write("---")
     st.write("##### Most similar verses:")
-    for i in range(n):
-        if scriptures["verse_title"][i] != search_verse:
+    for i in range(1, n):
             st.write(scriptures["verse_title"][i])
             st.write(">" + scriptures["scripture_text"][i])
             st.write("---")
