@@ -10,7 +10,7 @@ To generate your own additional footnotes using natural language processing, che
 Interested in word frequencies? Search for your word on the [Frequency](https://scriptures.streamlit.app/Frequency) page.
 
 
-Also check out my scripture blog, [Write of Christ](https://writeofchrist.vercel.app).
+
 
 
 ## Installation
@@ -26,4 +26,6 @@ streamlit run Home.py
 ```
 
 ## About
-This Streamlit app uses scriptures from the standard works of the Church of Jesus Christ of Latter-day Saints. The app is built using Python with Streamlit, and it leverages the Streamlit Extras library for additional features. 
+This Streamlit app uses scriptures from the standard works of the Church of Jesus Christ of Latter-day Saints. The app is built using Python with Streamlit, and it leverages the Streamlit Extras library for additional features. The natural language processing on the Similar Verses page uses the spaCy library. 
+
+Also check out my scripture blog, [Write of Christ](https://writeofchrist.vercel.app).
