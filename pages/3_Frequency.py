@@ -22,7 +22,9 @@ def download_nltk():
 
 download_nltk()
 
-scriptures = pl.read_parquet("./data/scriptures.parquet")
+scriptures = pl.read_parquet("./data/scriptures.parquet").with_columns(
+    chapter = pl.col("book_title") + " " + pl.col("chapter_number").cast(pl.Utf8),
+)
 
 
 st.sidebar.title("Filters")
@@ -39,6 +41,7 @@ else:
 group_by_mapping = {
     "volume_title": "Volume",
     "book_title": "Book",
+    "chapter": "Chapter",
     "verse_short_title": "Verse"
 }
 
